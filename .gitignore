@@ -1,0 +1,26 @@
+# Large data imports (ChatGPT raw exports, etc.)
+imports/
+
+# Logs
+logs/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editor
+.vscode/
+.idea/

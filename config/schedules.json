@@ -1,0 +1,34 @@
+{
+  "routines": [
+    {
+      "name": "idle-consolidation",
+      "description": "Muse consolidates when no conversation has been active for 30 minutes. Primary trigger.",
+      "trigger": "30_min_idle",
+      "worker": "workers/consolidator.js",
+      "status": "not_built",
+      "note": "This is the main consolidation trigger. Runs during natural breaks instead of requiring laptop on all night."
+    },
+    {
+      "name": "morning-brief",
+      "description": "Muse generates the daily brief and checks for proactive tasks. Only runs if Mac is on.",
+      "schedule": "0 5 * * *",
+      "time_human": "5:00 AM, daily (if Mac is awake)",
+      "worker": "workers/morning-brief.js",
+      "status": "not_built"
+    },
+    {
+      "name": "github-backup",
+      "description": "Auto-commit and push claude-mind to private GitHub repo.",
+      "trigger": "after_consolidation",
+      "worker": "workers/git-backup.js",
+      "status": "not_built"
+    }
+  ],
+  "resource_rules": {
+    "muse_cpu_check": true,
+    "muse_skip_if_cpu_above": 70,
+    "muse_max_ram_gb": 6,
+    "prefer_night_for_heavy_tasks": true,
+    "note": "G's Mac is his major investment. Be respectful of resources. M1 Max 32GB handles Muse easily but check before running."
+  }
+}

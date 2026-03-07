@@ -1,0 +1,7 @@
+{
+  "model": "qwen2.5:7b",
+  "base_url": "http://localhost:11434",
+  "temperature": 0.3,
+  "max_tokens": 4096,
+  "note": "Low temperature for memory processing — we want accuracy, not creativity. Qwen 2.5 7B runs fast on M1 Max 32GB using ~5GB RAM."
+}
