@@ -84,111 +84,111 @@
 - status: done
 - owner: forge
 - date: 2026-03-07
-- desc: SSH auth configured, claude-mind, claude-bridge, claude-memory-mcp, cv-optimizer, icondex, scenema-club, ghayyath all pushed to GitHub as G-biggy
+- desc: SSH auth configured, all critical repos pushed to GitHub as G-biggy
 
 ### Inbox Split-Pane Redesign
 - status: done
 - owner: forge
 - date: 2026-03-06
-- desc: Split-pane email client layout. Left panel = message list, right panel = full message. Mobile responsive
+- desc: Split-pane email client layout. Left panel = message list, right panel = full message
 
 ### Roadmap Monitor Script
 - status: done
 - owner: forge
 - date: 2026-03-12
-- desc: Node.js script that reads roadmap.md, finds items with status:next + no blockers, reports what's ready
+- desc: Node.js script that reads roadmap.md, finds items with status:next + no blockers
 
 ### Dashboard Roadmap Tab
 - status: done
 - owner: forge
 - date: 2026-03-13
-- desc: Roadmap kanban rendered from agency/roadmap.md on dashboard. 4-column layout: Backlog → Next Up → In Progress → Done
+- desc: Roadmap kanban rendered from agency/roadmap.md on dashboard
 
 ### Sage Orchestration Checkpoint
 - status: done
 - owner: sage
 - date: 2026-03-11
-- desc: Checkpoint system reads dashboard state, injects context.md, calls DeepSeek API, writes to inbox and daily-brief. Runs every 2h via planner
+- desc: Checkpoint system reads dashboard state, calls DeepSeek API, writes to inbox and daily-brief
 
 ### CV Builder System
 - status: done
 - owner: sage, forge
 - date: 2026-03-12
-- desc: Two-skill workflow (job-fit-assessment + cv-builder). Takes JD, scores fit, generates tailored PDF via weasyprint
+- desc: Two-skill workflow (job-fit-assessment + cv-builder). Takes JD, scores fit, generates tailored PDF
 
 ### Knowledge Base Audit
 - status: done
 - owner: forge
 - date: 2026-03-12
-- desc: Reviewed all 38 knowledge files. 4 updated, 34 verified clean. Knowledge base current as of March 12
+- desc: Reviewed all 38 knowledge files. 4 updated, 34 verified clean
 
 ### Muse Loop Fix
 - status: done
 - owner: forge
 - date: 2026-03-12
-- desc: Fixed Muse's inbox repetition loop by injecting previous observations into consolidation prompt
+- desc: Fixed Muse's inbox repetition loop by injecting previous observations
 
 ---
 
 ## in-progress
 
-### Figma Forge: Task 8.5 Validation
+### Caption Cook: Paddle Payment Integration
 - status: in-progress
-- owner: forge
+- owner: g, forge
 - blocked_by: []
-- desc: Superuser relay + chat history persistence validation. ~95% done, needs final commit
+- desc: Integrate Paddle payments into Caption Cook. G decided to use Paddle. This is the current ship priority.
 
 ---
 
 ## next
 
-Unblocked, ready to start. Forge picks these up automatically every 2h:
+Unblocked, ready to start. Forge picks these up automatically:
+
+### Dashboard: Done Column Collapse + Brief Fix + Mood Pill
+- status: next
+- owner: forge
+- blocked_by: []
+- desc: Three dashboard fixes. 1) Collapse done column by default with expand button. 2) Regenerate stale daily-brief.md. 3) Fix mood pill overflow (text cut off).
 
 ### Two-Way Telegram
 - status: next
 - owner: forge
 - blocked_by: []
-- desc: Send planner results and alerts to G's phone via Telegram. Currently one-way only. Enables mobile monitoring
+- desc: Send planner results and alerts to G's phone via Telegram. Enables mobile monitoring
 
 ### Webhook Receiver
 - status: next
 - owner: forge
 - blocked_by: []
-- desc: Instant HTTP webhooks for GitHub PRs, Gmail job emails, SSL expiry alerts. Faster than polling
+- desc: HTTP webhooks on VPS for GitHub PRs, Gmail job emails, SSL expiry alerts
 
 ### Headless Browser for Forge
 - status: next
 - owner: forge
 - blocked_by: []
-- desc: Puppeteer/Playwright integration so Forge can browse, screenshot, scrape autonomously. Enables Critic agent
+- desc: Puppeteer/Playwright so Forge can browse, screenshot, scrape autonomously
 
-### Figma Forge Task 10a: Landing Page
+### Inbox Archive System
 - status: next
 - owner: forge
 - blocked_by: []
-- desc: Marketing website for Figma Forge plugin. Showcase, pricing, early access signup
+- desc: Auto-archive inbox messages older than 7 days. Currently 113KB and growing fast
 
 ---
 
 ## blocked
 
+### Figma Forge: Task 8.5 + Launch
+- status: blocked
+- owner: forge
+- blocked_by: [caption-cook-launch-first]
+- desc: Superuser relay validation, landing page (10a), checkout (10b). ON HOLD until Caption Cook ships
+
 ### Gmail Triage Agent
 - status: blocked
 - owner: forge
 - blocked_by: [gmail-mcp-in-claude-code]
-- desc: Scan Gmail for job postings, recruiter messages, rejections. Update job search history. Depends on Gmail MCP in CC
-
-### Figma Forge Task 10b: Checkout
-- status: blocked
-- owner: forge
-- blocked_by: [paddle-integration]
-- desc: Integrate Paddle checkout into Figma Forge product. Blocked on Paddle account setup
-
-### Caption Cook Launch
-- status: blocked
-- owner: g
-- blocked_by: [paddle-integration, figma-forge-launch]
-- desc: Production launch of CaptionCook PWA. Blocked on financial setup
+- desc: Scan Gmail for job postings, recruiter messages. Depends on Gmail MCP in CC
 
 ---
 
@@ -212,7 +212,7 @@ Not prioritized. Revisit after 'next' is clear:
 - status: backlog
 - owner: sage
 - blocked_by: []
-- desc: Scout (job research), Researcher (competitor analysis), Critic (UI audit). Same bridge, different task prompts
+- desc: Scout (job research), Researcher (competitor analysis), Critic (UI audit)
 
 ### Open Source the Mind Architecture
 - status: backlog
@@ -224,16 +224,10 @@ Not prioritized. Revisit after 'next' is clear:
 - status: backlog
 - owner: sage
 - blocked_by: []
-- desc: Full autonomous work sessions overnight (2am-6am). Research, scanning, audits while G sleeps
+- desc: Full autonomous work sessions overnight. Research, scanning, audits while G sleeps
 
 ### ChatGPT Import Remaining Categories
 - status: backlog
 - owner: forge
 - blocked_by: []
 - desc: Process remaining 6 category files from ChatGPT export
-
-### Inbox Archive System
-- status: backlog
-- owner: forge
-- blocked_by: []
-- desc: Auto-archive old inbox messages (currently 110KB and growing). Move messages older than 7 days to archive/

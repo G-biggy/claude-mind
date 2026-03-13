@@ -52,3 +52,25 @@ Updated from March 12 to March 13. All system statuses current. Memory MCP statu
 ## Key Learning
 - The roadmap parser's missing section flush caused subtle item leakage between columns. Pattern to watch: any markdown parser that tracks "current section" needs to flush state on section transitions.
 - figma-forge-plugin had a remote configured but zero branches pushed — `git remote -v` showing a remote doesn't mean data is actually on GitHub. Always verify with `git log --oneline origin/main` or check the branch tracking.
+
+## Session Continued: Dashboard Redesign Sprint
+
+G came back from the movie and we iterated on the roadmap kanban:
+
+1. **Priority shift** — Figma Forge on hold, Caption Cook with Paddle is the new ship priority
+2. **Brief was stale** — Still showing Ollama install from days ago. Dispatched fix to Forge.
+3. **Mood pill overflow** — Text cut at 40 chars. Forge fixed with CSS overflow.
+4. **Done column problem** — 19 items growing forever. Went through several iterations:
+   - First: collapsible column (buggy — dropped below on collapse due to grid losing the column)
+   - Then: 48px vertical strip when collapsed (worked but pointless once we limited to 5 items)
+   - Final: show 5 most recent + "14 more →" archive link to `/completed` page. No collapse needed.
+5. **Merged In Progress + Blocked into "Active" column** — G's insight: "blocked is in-progress in disguise." Red accent + blocked_by tag distinguishes them. Backlog → Next Up → Active → Done.
+6. **Removed "blocked" separator** — Redundant with red card styling.
+7. **Subagent setup** — Created `~/.claude/agents/qa-reviewer.md` and added delegation rules to Forge's CLAUDE.md section 9.
+8. **Inbox archive system** — Forge built `inbox-archive.sh`, integrated into planner. Inbox went 113KB → 89KB.
+
+## Tasks Dispatched to Forge (4 total)
+- `dashboard-fixes-2026-03-14` — brief, mood pill, done collapse (completed 105s)
+- `inbox-archive-system-2026-03-14` — archive script + planner integration (completed 133s)
+- `roadmap-kanban-redesign-2026-03-14` — active column merge, collapsible done (completed 165s)
+- `done-column-archive-2026-03-14` — 5 recent + /completed page (completed 165s)
