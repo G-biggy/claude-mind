@@ -301,7 +301,7 @@ Peak intensity was Dec 2025 – Jan 2026 (85 conversations in 2 months). Novembe
 - **Authenticity over positioning** — G explicitly pushed back on overclaiming AI expertise
 - Ireland applications included **CSEP (Critical Skills Employment Permit)** positioning under SOC 2137
 
-## Current Status (March 6, 2026)
+## Current Status (March 9, 2026)
 
 - **Still actively hunting — this is the main mission right now**
 - Dedicated Claude.ai project set up with master CV and LinkedIn CV
@@ -310,6 +310,17 @@ Peak intensity was Dec 2025 – Jan 2026 (85 conversations in 2 months). Novembe
 
 ## Known Outcomes
 
-- **INGOT (Amman)**: Got a callback and completed an interview. Only company that responded positively.
+- **INGOT (Amman)**: ❌ **Rejected Mar 9, 2026** — Got callback and completed interview, but rejected after consideration ("another candidate whose background aligns more closely with our current needs")
 - **Valtech (Dubai)**: ❌ Rejected
 - **All other 139 companies**: Rejected or ghosted. No other callbacks or interviews received.
+
+### Timeline for INGOT
+
+| Date | Event |
+|------|-------|
+| Jan 10 | Applied |
+| Feb 18 | Interview invitation received |
+| Feb 18–24 | Availability negotiation (proposed Wed 10–12 & 2–3, Thu 9–12 & 1:30–3) |
+| Feb 24 | Followed up on scheduling |
+| ??? | Interview completed (exact date unknown, between Feb 24 – Mar 9) |
+| Mar 9 | Rejection email received |

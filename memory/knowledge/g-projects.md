@@ -6,32 +6,34 @@
 - **What:** Native Figma plugin. Design system co-pilot: health scoring (Assess), automated fixes (Fix), and AI-powered design generation using users' actual design system (Create).
 - **Where:** ~/VS-workspace/figma-forge-plugin/
 - **Stack:** TypeScript + React + Vite/esbuild (plugin), Supabase Edge Functions + Claude API (backend Phase 3)
-- **Status:** UX polished and stable as of Mar 5, 2026. Fix engine working (multi-match, picker, persistence, revert, skip/restore). Score recalculation, scope toggle, page filter, status filter all working.
-- **Model:** Free (unlimited Assess + 3 lifetime AI credits), Pro at $12/month via Paddle on figmaforge.com
+- **Status:** Tasks 1-9b COMPLETE (health check, fix engine, AI chat, design system context, backend auth). Tasks 10a-10b queued (landing page website, Paddle checkout). Ship target: week of Mar 15, 2026.
+- **Model:** Free (unlimited Assess + 3 lifetime AI credits), Pro at $12/month via Paddle
+- **Launch:** Will submit to Figma Marketplace. Subdomain: forge.ghayyath.com will redirect to marketplace.
 - **Key constraint:** Plugin API is single-file only. Cross-file DS analysis not possible.
 - **Details:** memory/knowledge/figma-forge-plugin.md
 - **Note:** Separate product from figma-forge-mcp-server (CLI tool). Same brand, different audience.
+
+### Caption Cook
+- **What:** Recipe/cooking app with nutritional breakdowns (calories, protein, carbs, fat). Users paste recipe URL/text or upload screenshots, get structured recipe with macros.
+- **Where:** ~/VS-workspace/caption-cook/ (app) and ~/VS-workspace/captioncook-website/ (marketing site)
+- **Stack:** Next.js 16, Supabase, Paddle (migrated from Stripe for regional support)
+- **Status:** App code complete. Marketing site live in waitlist mode (launched Mar 1, 2026). Awaiting Paddle checkout + webhook integration. Ship target: week of Mar 15, 2026 (after Figma Forge).
+- **Model:** Freemium. 5 lifetime saves free, Pro tier for unlimited.
 
 ### IconDex
 - **What:** Cross-platform desktop icon viewer. Browse, search, copy local icon libraries as SVG, React, or Vue code.
 - **Where:** ~/VS-workspace/icondex/
 - **Stack:** Tauri 2.0, React, TypeScript, Tailwind CSS, shadcn/ui
-- **Status:** Documentation complete (README, PRD, TASKS x10 phases, BUSINESS_RULES, privacy policy, EULA). Development not yet started as of Mar 2026.
+- **Status:** Full spec complete (PRD, TASKS x10 phases, BUSINESS_RULES, privacy policy, EULA). Phase 0 (environment setup) ready to start. Development not yet begun.
 - **Domain:** icondex.app (registered)
 - **Model:** Free core, one-time Pro unlock at $9–15. No subscription.
+- **Priority:** Lower. After Figma Forge and Caption Cook shipped.
 - **Details:** memory/knowledge/icondex-project.md
-
-### Caption Cook
-- **What:** Recipe/cooking app
-- **Where:** ~/VS-workspace/caption-cook/ (app) and ~/VS-workspace/captioncook-website/ (marketing site)
-- **Stack:** Next.js, Supabase, Stripe
-- **Status:** In development. Marketing site live in waitlist mode. Waitlist launched ~Mar 1 2026.
-- **Note:** Early conversations about Caption Cook may be in pre-project Claude.ai history (before Feb 10)
 
 ### Claude-Mind
 - **What:** AI identity & memory system (the soul architecture)
 - **Where:** ~/VS-workspace/claude-mind/
-- **Status:** Foundation built. Workers dispatched. Memory being populated (this effort).
+- **Status:** Foundation built. Workers dispatched. Memory being populated (ongoing).
 
 ### Claude-Bridge
 - **What:** Task orchestration between Claude instances
@@ -44,9 +46,9 @@
 - **Status:** Working. Used daily by Sage for all Mac filesystem operations.
 
 ### Personal Site / Portfolio
-- **What:** G's personal website
+- **What:** G's personal website at ghayyath.com
 - **Where:** ~/VS-workspace/ghayyath/
-- **Status:** Unknown. Not discussed much in recent conversations.
+- **Status:** Static HTML + Tailwind, live and working. Will link to shipped products (Caption Cook, Figma Forge, IconDex) once they launch.
 
 ### CV Optimizer
 - **What:** CV optimization tool for job seekers. Upload base CV, paste job description, get fit analysis (free) or optimized CV output (credits)
@@ -105,4 +107,13 @@
 
 ## Context
 
-G is a product designer who is currently between roles. These projects represent both his craft (Caption Cook, portfolio) and his vision for how AI should work (claude-mind, claude-bridge, MacKitt). Scenema Club is a legacy side project with a large audience that could be revived.
+G is a product designer currently between roles. He prioritizes shipping over planning—prefers working prototypes to perfect specs. Current focus (as of Mar 12, 2026): **Ship Figma Forge by Mar 15, then Caption Cook + Paddle the following week.**
+
+Philosophy on launches: minimal hype, maximum product. One tweet/LinkedIn post per ship. No daily social grinding. Build something good, let it speak for itself.
+
+## System Infrastructure (as of Mar 12, 2026)
+
+- **Planner daemon** (2h cycle): Auto-fetches job listings. Bug fixed Mar 12 (excluded inbox-reply-* files from searches).
+- **Usage gate** (Mar 12): Session <75%, >45 min left, weekly <85%, money <$5. Prevents over-consumption.
+- **Memory system**: 5-layer (context, episodes, knowledge, successes, errors). Muse consolidation operational.
+- **Git backup**: All repos backed up to GitHub as of Mar 7, 2026.

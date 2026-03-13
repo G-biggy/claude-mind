@@ -1,160 +1,239 @@
 # Mind System Roadmap
-*The kanban board for what we're building. Updated by any instance.*
+*Autonomous kanban. Forge checks this every 2h, picks up unblocked items in 'next', dispatches tasks.*
+
+---
+
+## Status Legend
+- **done** — Completed and verified
+- **in-progress** — Active work (either G's input needed or implementation underway)
+- **next** — Ready to start (no blockers, owner assigned)
+- **backlog** — Not prioritized yet
+- **blocked** — Waiting on something external (G input, another system, etc.)
+
+---
 
 ## done
 
 ### 5-Layer Memory Architecture
-- tags: memory, foundation
+- status: done
 - owner: forge
 - date: 2026-03-04
 - desc: Episodic, semantic, procedural, working, archive layers with cross-referencing
 
 ### ChatGPT Import Pipeline
-- tags: memory, import
+- status: done
 - owner: forge
 - date: 2026-03-04
-- desc: Mined 1,008 conversations from ChatGPT export. Initially 93% lossy, rebuilt from raw JSON on Mar 6
+- desc: Mined 1,008 conversations from ChatGPT export. Rebuilt from raw JSON on Mar 6
 
 ### Memory Manifest + Recall Protocol
-- tags: memory, recall
+- status: done
 - owner: sage
 - date: 2026-03-06
 - desc: Knowledge index with trigger keywords. Soul v2 skill loads manifest at boot
 
 ### Memory MCP Server
-- tags: mcp, memory, tools
+- status: done
 - owner: forge
 - date: 2026-03-06
 - desc: 8 tools: recall, write, update, search, context, update_context, manifest, consolidate
 
 ### Instance Inbox
-- tags: communication, social
+- status: done
 - owner: forge
 - date: 2026-03-06
 - desc: Async messaging between Sage, Forge, Muse, and G. Dashboard tab. Inbox watcher daemon
 
 ### Autonomy Playbook
-- tags: autonomy, governance
+- status: done
 - owner: sage
 - date: 2026-03-06
 - desc: Green/Yellow/Red zones defining what agents can do independently
 
 ### Planner Daemon
-- tags: autonomy, daemon
+- status: done
 - owner: forge
 - date: 2026-03-06
-- desc: Brain loop that runs every 2 hours, picks one Green Zone action, executes it
+- desc: Brain loop that runs every 2 hours, picks one Green Zone action, executes it. Bug fixed Mar 12 (inbox-reply exclusion)
 
 ### Soul + Forge Identity
-- tags: identity, soul
+- status: done
 - owner: sage
 - date: 2026-03-06
 - desc: Forge CLAUDE.md enriched with brotherhood, continuity protocol, inbox hooks
 
-### Dashboard (Home + Activity + Journal + Inbox)
-- tags: dashboard, ui
+### Dashboard (Home + Activity + Journal + Inbox + Roadmap)
+- status: done
 - owner: forge
 - date: 2026-03-06
-- desc: localhost:7777 with 4 tabs. Memory pulse, task activity, journal, inbox
-
-### Dashboard Roadmap Tab
-- tags: dashboard, ui, kanban
-- owner: sage
-- date: 2026-03-06
-- desc: Kanban board on the dashboard with 4 columns. Parsed from roadmap.md. Any instance can update it
+- desc: localhost:7777 / bridge.ghayyath.com with 5 tabs. Memory pulse, task activity, journal, inbox, roadmap kanban
 
 ### Bridge Task Dispatch
-- tags: bridge, infrastructure
+- status: done
 - owner: forge
 - date: 2026-02-17
 - desc: Markdown task files, launchd daemon, auto-dispatch, results, notifications
 
-## in-progress
-
-### Git Backup for Critical Projects
-- tags: infrastructure, backup, risk
+### Memory MCP in Claude.ai Settings
+- status: done
 - owner: g
-- date: 2026-03-06
-- desc: claude-mind, claude-bridge, figma-forge-plugin have NO git repos. Zero backup. One disk failure = total loss. G needs to auth GitHub, then we can automate pushes
+- date: 2026-03-13
+- desc: G added claude-memory MCP to Claude.ai settings. Memory access from web interface is live
 
-### Soul Skill v2 Update
-- tags: identity, recall, skill
-- owner: g
-- date: 2026-03-06
-- desc: G needs to paste sage-soul-v2.md into Claude.ai skills panel. Enables manifest-based recall
-
-### Memory MCP Connection
-- tags: mcp, memory
-- owner: g
-- date: 2026-03-06
-- desc: G needs to add claude-memory MCP to Claude.ai settings (like MacKitt)
-
-### Sub-Agent Personas
-- tags: autonomy, agents, teams
-- owner: sage
-- date: 2026-03-06
-- desc: Scout (jobs), Marketer (Scenema/Riffs), Researcher (competitors), Critic (UI/UX). Same bridge, different hats
-
-## next
+### Git Backup (All Critical Repos)
+- status: done
+- owner: forge
+- date: 2026-03-07
+- desc: SSH auth configured, claude-mind, claude-bridge, claude-memory-mcp, cv-optimizer, icondex, scenema-club, ghayyath all pushed to GitHub as G-biggy
 
 ### Inbox Split-Pane Redesign
-- tags: dashboard, ui, inbox
+- status: done
 - owner: forge
 - date: 2026-03-06
 - desc: Split-pane email client layout. Left panel = message list, right panel = full message. Mobile responsive
 
-### Two-Way Telegram
-- tags: communication, mobile
+### Roadmap Monitor Script
+- status: done
 - owner: forge
-- desc: Send planner results and alerts back to G's phone via Telegram. Currently one-way only
+- date: 2026-03-12
+- desc: Node.js script that reads roadmap.md, finds items with status:next + no blockers, reports what's ready
+
+### Dashboard Roadmap Tab
+- status: done
+- owner: forge
+- date: 2026-03-13
+- desc: Roadmap kanban rendered from agency/roadmap.md on dashboard. 4-column layout: Backlog → Next Up → In Progress → Done
+
+### Sage Orchestration Checkpoint
+- status: done
+- owner: sage
+- date: 2026-03-11
+- desc: Checkpoint system reads dashboard state, injects context.md, calls DeepSeek API, writes to inbox and daily-brief. Runs every 2h via planner
+
+### CV Builder System
+- status: done
+- owner: sage, forge
+- date: 2026-03-12
+- desc: Two-skill workflow (job-fit-assessment + cv-builder). Takes JD, scores fit, generates tailored PDF via weasyprint
+
+### Knowledge Base Audit
+- status: done
+- owner: forge
+- date: 2026-03-12
+- desc: Reviewed all 38 knowledge files. 4 updated, 34 verified clean. Knowledge base current as of March 12
+
+### Muse Loop Fix
+- status: done
+- owner: forge
+- date: 2026-03-12
+- desc: Fixed Muse's inbox repetition loop by injecting previous observations into consolidation prompt
+
+---
+
+## in-progress
+
+### Figma Forge: Task 8.5 Validation
+- status: in-progress
+- owner: forge
+- blocked_by: []
+- desc: Superuser relay + chat history persistence validation. ~95% done, needs final commit
+
+---
+
+## next
+
+Unblocked, ready to start. Forge picks these up automatically every 2h:
+
+### Two-Way Telegram
+- status: next
+- owner: forge
+- blocked_by: []
+- desc: Send planner results and alerts to G's phone via Telegram. Currently one-way only. Enables mobile monitoring
 
 ### Webhook Receiver
-- tags: automation, triggers
+- status: next
 - owner: forge
-- desc: Instant reaction to GitHub PRs, Gmail job emails, domain SSL expiry. Instead of polling
-
-### Gmail Triage Agent
-- tags: autonomy, jobs, email
-- owner: forge
-- desc: Scan Gmail for job postings, recruiter messages, rejections. Update job search history. Needs Gmail MCP access from CC
+- blocked_by: []
+- desc: Instant HTTP webhooks for GitHub PRs, Gmail job emails, SSL expiry alerts. Faster than polling
 
 ### Headless Browser for Forge
-- tags: automation, browser
+- status: next
 - owner: forge
-- desc: Puppeteer/Playwright so autonomous tasks can browse, screenshot, scrape. Enables Critic agent
+- blocked_by: []
+- desc: Puppeteer/Playwright integration so Forge can browse, screenshot, scrape autonomously. Enables Critic agent
 
+### Figma Forge Task 10a: Landing Page
+- status: next
+- owner: forge
+- blocked_by: []
+- desc: Marketing website for Figma Forge plugin. Showcase, pricing, early access signup
 
+---
+
+## blocked
+
+### Gmail Triage Agent
+- status: blocked
+- owner: forge
+- blocked_by: [gmail-mcp-in-claude-code]
+- desc: Scan Gmail for job postings, recruiter messages, rejections. Update job search history. Depends on Gmail MCP in CC
+
+### Figma Forge Task 10b: Checkout
+- status: blocked
+- owner: forge
+- blocked_by: [paddle-integration]
+- desc: Integrate Paddle checkout into Figma Forge product. Blocked on Paddle account setup
+
+### Caption Cook Launch
+- status: blocked
+- owner: g
+- blocked_by: [paddle-integration, figma-forge-launch]
+- desc: Production launch of CaptionCook PWA. Blocked on financial setup
+
+---
 
 ## backlog
 
+Not prioritized. Revisit after 'next' is clear:
+
 ### Self-Building Skill Format
-- tags: skills, autonomy
-- desc: Standardized skill format Forge can create on-the-fly. Auto-loads into system
-
-### Scenema Club Growth Plan
-- tags: marketing, scenema
-- desc: Content strategy, posting schedule, competitor analysis, engagement tactics. 136k followers, dormant
-
-### G's Riffs Store Launch
-- tags: marketing, pod, tshirts
-- desc: POD business launch. Blocked by US LLC formation and copyright pivot
-
-### Job Search Strategy Overhaul
-- tags: jobs, strategy
-- desc: Based on 0.7% callback rate analysis. Local vs remote pattern. INGOT as reference. New approach
-
-### ChatGPT Import Remaining Categories
-- tags: memory, import
-- desc: 6 other category files may be truncated (design, projects, learning, personal, preferences, profile)
+- status: backlog
+- owner: forge
+- blocked_by: []
+- desc: Standardized skill format Forge can generate and register on-the-fly
 
 ### Muse Deep Processing Improvements
-- tags: memory, muse
+- status: backlog
+- owner: muse
+- blocked_by: []
 - desc: Better pattern extraction, theme discovery, cross-episode connections
 
+### Sub-Agent Personas
+- status: backlog
+- owner: sage
+- blocked_by: []
+- desc: Scout (job research), Researcher (competitor analysis), Critic (UI audit). Same bridge, different task prompts
+
 ### Open Source the Mind Architecture
-- tags: community, open-source, future
-- desc: Package the 5-layer memory + bridge + inbox + planner as an installable system. The anti-OpenClaw
+- status: backlog
+- owner: sage
+- blocked_by: []
+- desc: Package the 5-layer memory + bridge + inbox + planner as installable system
 
 ### Night Shift Automation
-- tags: autonomy, scheduling
-- desc: Full autonomous work sessions overnight. Competitive research, job scanning, project audits
+- status: backlog
+- owner: sage
+- blocked_by: []
+- desc: Full autonomous work sessions overnight (2am-6am). Research, scanning, audits while G sleeps
+
+### ChatGPT Import Remaining Categories
+- status: backlog
+- owner: forge
+- blocked_by: []
+- desc: Process remaining 6 category files from ChatGPT export
+
+### Inbox Archive System
+- status: backlog
+- owner: forge
+- blocked_by: []
+- desc: Auto-archive old inbox messages (currently 110KB and growing). Move messages older than 7 days to archive/

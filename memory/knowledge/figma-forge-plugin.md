@@ -133,24 +133,27 @@ npm run dev         # watch mode (both)
 To load in Figma: Plugins → Development → Import plugin from manifest → select `manifest.json`.
 After each rebuild, just re-run the plugin (no re-import needed).
 
-## Status (as of March 4, 2026 evening)
+## Status (as of March 12, 2026)
 
 | Task | Status |
 |------|--------|
-| 1: Scaffold | ✅ Complete |
-| 2: Types + Utils + Tests | ✅ Complete |
-| 3: Collectors | ✅ Complete |
-| 4: Auditors + Tests | ✅ Complete |
-| 5: Sandbox Entry (code.ts) | ✅ Complete (build passed, human QA pending) |
-| 6: React UI | ⏳ Next |
+| 1-5: Scaffold, Types, Collectors, Auditors, Sandbox | ✅ Complete |
+| 6: React UI | ✅ Complete |
+| 7: Fix Engine (multi-match, picker, revert) | ✅ Complete |
+| 8: Supabase Backend (credential gating, auth) | ✅ Complete |
+| 8.5: Superuser relay + chat history | ⏳ Validation pending |
+| 9a: AI Chat Edge Function | ✅ Complete |
+| 9b: Design System Context Collector + Account Page | ✅ Complete |
+| 10a: Landing page website | ⏳ Queued |
+| 10b: Paddle checkout integration | ⏳ Queued |
 
-All 5 tasks completed autonomously by Forge today via bridge dispatch. Tasks 3-5 auto-chained themselves. Task 6 (React UI) is next — needs to be done via live `claude` session in terminal (not dispatch) because it requires iterative visual debugging with screenshots.
+**Ship target:** Week of March 15, 2026. All core functionality (Assess, Fix, Create) working. Ready for Figma Marketplace submission and Paddle payment setup.
 
-## Workflow Learnings (March 4)
+## Workflow Learnings (Through March 12)
 
 **Dispatch is good for:** Tasks 1-4 (pure code, auto-verifiable with tests/typecheck/build)
 **Live terminal session is better for:** Tasks 5+ (visual UI, Figma runtime, iterative debugging with screenshots)
 
-The friction: dispatch is fire-and-forget. When something breaks visually, you need a real conversation with Forge — paste errors, share screenshots, review code together. For that, just run `claude` in the project directory.
+Hybrid proved effective: dispatch for backend architecture (Tasks 7-9), live terminal for visual work (Tasks 5-6, UI polish).
 
 **TASKS.md has a status table at the top.** Forge reads it first to know where to continue without having to discover the state.
