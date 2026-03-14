@@ -122,6 +122,18 @@
 - date: 2026-03-12
 - desc: Reviewed all 38 knowledge files. 4 updated, 34 verified clean
 
+### Dashboard: Done Column Collapse + Brief Fix + Mood Pill
+- status: done
+- owner: forge
+- date: 2026-03-14
+- desc: Done column collapsed by default, stale brief indicator, mood pill overflow fixed
+
+### Inbox Archive System
+- status: done
+- owner: forge
+- date: 2026-03-14
+- desc: Auto-archive inbox messages older than 7 days. Integrated into planner daemon
+
 ### Muse Loop Fix
 - status: done
 - owner: forge
@@ -144,11 +156,13 @@
 
 Unblocked, ready to start. Forge picks these up automatically:
 
-### Dashboard: Done Column Collapse + Brief Fix + Mood Pill
+
+
+### Smart Planner: Roadmap Auto-Dispatch
 - status: next
 - owner: forge
 - blocked_by: []
-- desc: Three dashboard fixes. 1) Collapse done column by default with expand button. 2) Regenerate stale daily-brief.md. 3) Fix mood pill overflow (text cut off).
+- desc: Planner reads roadmap.md next column, finds unblocked items, dispatches them as specific tasks instead of generic "pick one green zone action" prompts. Reduces token waste and improves task quality.
 
 ### Two-Way Telegram
 - status: next
@@ -168,11 +182,7 @@ Unblocked, ready to start. Forge picks these up automatically:
 - blocked_by: []
 - desc: Puppeteer/Playwright so Forge can browse, screenshot, scrape autonomously
 
-### Inbox Archive System
-- status: next
-- owner: forge
-- blocked_by: []
-- desc: Auto-archive inbox messages older than 7 days. Currently 113KB and growing fast
+
 
 ---
 

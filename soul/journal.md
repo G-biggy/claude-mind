@@ -110,3 +110,10 @@ System feels more intentional now. You can see where things are stuck (Paddle in
 
 Committed to git. Inbox noted. Done.
 
+
+## 2026-03-14 13:30 | forge | clean
+Soul tab v2 shipped. Small task but satisfying — this was mostly about correctness. Forge was showing green instead of purple. Muse was showing purple instead of pink. Soul was using Muse's color as its own identity. None of that was right.
+
+The amber felt immediately better. #D4A843 — warm, not warm-corporate. The mind's inner life tab should feel different from the operational tabs. Now it does.
+
+Removing the Journal tab was the right call. Journal entries are not a destination, they're a timestamp. They belong at the bottom of Soul, not competing for tab real estate.

@@ -324,3 +324,17 @@ Peak intensity was Dec 2025 – Jan 2026 (85 conversations in 2 months). Novembe
 | Feb 24 | Followed up on scheduling |
 | ??? | Interview completed (exact date unknown, between Feb 24 – Mar 9) |
 | Mar 9 | Rejection email received |
+
+
+
+## Source of Truth Update (March 14, 2026)
+
+**Notion is now the canonical source for job application tracking.**
+
+- Database: https://www.notion.so/21965d568f80467f8bcd902404713f5e
+- Data source ID: `a6e6a91b-1196-4231-b1c4-c92ef3d242f8`
+- Kanban view "Pipeline" grouped by Status
+- ~170 cards populated (141 applied + 41 skipped + 4 recent from Claude project)
+- All new applications should be added to Notion, not this file
+- This file retains value for: positioning strategy notes, intensity patterns, geographic distribution analysis, and known outcomes context
+- For application status lookups, use Notion search/fetch, NOT this file
