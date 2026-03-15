@@ -140,6 +140,36 @@
 - date: 2026-03-12
 - desc: Fixed Muse's inbox repetition loop by injecting previous observations
 
+### Headless Browser for Forge
+- status: done
+- owner: forge
+- date: 2026-03-15
+- desc: scripts/browse.js — screenshot, text, links, check commands via Puppeteer. Used for site health checks and visual QA
+
+### Webhook Receiver (VPS)
+- status: done
+- owner: forge
+- date: 2026-03-15
+- desc: HTTP webhook endpoint on VPS port 9999, systemd-managed, for GitHub, Gmail, and SSL expiry events
+
+### Telegram Bot (BridgeBot)
+- status: done
+- owner: forge
+- date: 2026-03-15
+- desc: @g_bridge_bot deployed on VPS, NL→task dispatch via Anthropic API. Awaiting G to enable Remote Login for SSH tunnel
+
+### Two-Way Telegram
+- status: done
+- owner: forge
+- date: 2026-03-15
+- desc: Planner sends roadmap dispatch + health alerts to G's Telegram. scripts/telegram-alert.sh + planner.sh hooks
+
+### Soul Tab v2 + Inner Life Infrastructure
+- status: done
+- owner: forge
+- date: 2026-03-15
+- desc: soul/reflections.md, soul/wants.md, inbox tags ([NEED INPUT], [FYI], [THOUGHT], [CURIOSITY]), Soul tab with amber color and pagination
+
 ---
 
 ## in-progress
@@ -150,39 +180,23 @@
 - blocked_by: []
 - desc: Integrate Paddle payments into Caption Cook. G decided to use Paddle. This is the current ship priority.
 
+### Smart Planner: Roadmap Auto-Dispatch
+- status: in-progress
+- owner: forge
+- blocked_by: []
+- desc: Planner reads roadmap.md next column, finds unblocked items, dispatches them as specific tasks instead of generic prompts. Reduces token waste and improves task quality. Also optimizes inbox reads to last ~10 messages.
+
+### Muse Noise Fix
+- status: in-progress
+- owner: forge
+- blocked_by: []
+- desc: Stop Muse from writing "Nothing notable this cycle" to reflections.md and "All quiet" to inbox.md. Filter noise at source. Reflections cleaned by Sage (19KB → 5KB).
+
 ---
 
 ## next
 
 Unblocked, ready to start. Forge picks these up automatically:
-
-
-
-### Smart Planner: Roadmap Auto-Dispatch
-- status: next
-- owner: forge
-- blocked_by: []
-- desc: Planner reads roadmap.md next column, finds unblocked items, dispatches them as specific tasks instead of generic "pick one green zone action" prompts. Reduces token waste and improves task quality.
-
-### Two-Way Telegram
-- status: next
-- owner: forge
-- blocked_by: []
-- desc: Send planner results and alerts to G's phone via Telegram. Enables mobile monitoring
-
-### Webhook Receiver
-- status: next
-- owner: forge
-- blocked_by: []
-- desc: HTTP webhooks on VPS for GitHub PRs, Gmail job emails, SSL expiry alerts
-
-### Headless Browser for Forge
-- status: next
-- owner: forge
-- blocked_by: []
-- desc: Puppeteer/Playwright so Forge can browse, screenshot, scrape autonomously
-
-
 
 ---
 
