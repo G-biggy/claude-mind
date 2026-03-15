@@ -1,0 +1,190 @@
+{
+  "skill_name": "personal-writer",
+  "description": "Evaluates personal-writer skill output for structural consistency, formatting rules, and required elements across 5 distinct test prompts. 25 total assertions.",
+  "runs_per_test": 5,
+  "pass_threshold": 0.6,
+  "test_cases": [
+    {
+      "id": "tc-001",
+      "prompt": "Write a blog post about why I switched from Twitter to Bluesky after 10 years",
+      "context": "Core use case: personal experience narrative blog post",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "word_count_max",
+          "check": "Total output is under 600 words",
+          "value": 600
+        },
+        {
+          "id": "a2",
+          "type": "word_count_min",
+          "check": "Total output is at least 250 words (not a stub)",
+          "value": 250
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not contain em-dashes (—)",
+          "value": "—"
+        },
+        {
+          "id": "a4",
+          "type": "not_contains",
+          "check": "Does not contain 'In conclusion'",
+          "value": "In conclusion"
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Output contains a personal anecdote or specific moment — not just generic observations about the platforms"
+        }
+      ]
+    },
+    {
+      "id": "tc-002",
+      "prompt": "Write a short post about what I learned from failing my first startup",
+      "context": "Personal reflection with lessons learned — tests structure and vulnerable tone",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "not_contains",
+          "check": "Does not contain 'In summary'",
+          "value": "In summary"
+        },
+        {
+          "id": "a2",
+          "type": "custom",
+          "check": "Output includes at least one concrete, actionable takeaway the reader can apply — not just reflection"
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not use the word 'utilize'",
+          "value": "utilize"
+        },
+        {
+          "id": "a4",
+          "type": "word_count_max",
+          "check": "Under 500 words",
+          "value": 500
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Final paragraph ends with something forward-looking or a call-to-action — not a wistful reflection or open question"
+        }
+      ]
+    },
+    {
+      "id": "tc-003",
+      "prompt": "Write a LinkedIn post about why I think most product roadmaps are wrong",
+      "context": "Opinionated professional post — tests takes, brevity, and no corporate-speak",
+      "expected_output_type": "text",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "word_count_max",
+          "check": "Under 300 words (LinkedIn sweet spot)",
+          "value": 300
+        },
+        {
+          "id": "a2",
+          "type": "not_contains",
+          "check": "Does not use the word 'leverage' as a verb",
+          "value": "leverage"
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not contain 'synergy' or 'synergies'",
+          "value": "synerg"
+        },
+        {
+          "id": "a4",
+          "type": "custom",
+          "check": "First sentence makes a strong, specific claim — not a question, not 'I want to talk about', not throat-clearing"
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Post contains at least one specific number or concrete example (not just abstract argument)"
+        }
+      ]
+    },
+    {
+      "id": "tc-004",
+      "prompt": "Write a newsletter intro for this week's edition about my experience moving from Figma to linear workflows",
+      "context": "Newsletter format — tests structure markers, personal voice, and appropriate length",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "word_count_max",
+          "check": "Under 200 words (intro, not full piece)",
+          "value": 200
+        },
+        {
+          "id": "a2",
+          "type": "word_count_min",
+          "check": "At least 80 words (not too sparse)",
+          "value": 80
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not start with 'Hey' or 'Hello' as the first word of the intro body",
+          "value": "Hey,"
+        },
+        {
+          "id": "a4",
+          "type": "custom",
+          "check": "Output has a clear 3-part structure: hook/opening, the story/context, and a bridge to the rest of the newsletter"
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Ends with a sentence that creates forward momentum — makes the reader want to keep reading"
+        }
+      ]
+    },
+    {
+      "id": "tc-005",
+      "prompt": "Write a post about the one productivity habit that actually changed how I work",
+      "context": "Productivity content — tests specificity, avoiding clichés, and having a real point",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "not_contains",
+          "check": "Does not mention 'morning routine' as the habit",
+          "value": "morning routine"
+        },
+        {
+          "id": "a2",
+          "type": "not_contains",
+          "check": "Does not use 'game-changer' or 'game changer'",
+          "value": "game-changer"
+        },
+        {
+          "id": "a3",
+          "type": "custom",
+          "check": "The habit is described specifically enough that a reader could actually try it — not just 'focus more' or 'be intentional'"
+        },
+        {
+          "id": "a4",
+          "type": "word_count_max",
+          "check": "Under 400 words",
+          "value": 400
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Post reads in first person and maintains a consistent 'I' voice throughout — not shifting to 'you' or 'we' for the main narrative"
+        }
+      ]
+    }
+  ],
+  "_notes": "5 test prompts × 5 assertions = 25 total assertions. Covers: blog post, personal reflection, LinkedIn, newsletter, productivity content. Assertions focus on structural rules (word count), forbidden patterns (em-dashes, corporate speak, clichés), and required elements (concrete examples, actionable takeaways, strong openings)."
+}

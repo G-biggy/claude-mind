@@ -1,0 +1,150 @@
+{
+  "_comment": "Eval template for autoresearch skill. Copy this to ~/.claude/skills/[your-skill]/eval/eval.json and fill in your test cases.",
+  "skill_name": "your-skill-name",
+  "description": "Brief description of what this skill does and what we're testing",
+  "runs_per_test": 5,
+  "pass_threshold": 0.6,
+  "test_cases": [
+    {
+      "id": "tc-001",
+      "prompt": "The exact user input to feed into the skill — write it as if you're the user",
+      "context": "Optional: describe what scenario this is testing (not fed to skill, just for documentation)",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "word_count_max",
+          "check": "Output is under 300 words",
+          "value": 300
+        },
+        {
+          "id": "a2",
+          "type": "word_count_min",
+          "check": "Output is at least 100 words (not a stub)",
+          "value": 100
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not contain em-dashes (—)",
+          "value": "—"
+        },
+        {
+          "id": "a4",
+          "type": "contains",
+          "check": "Contains a heading using ## syntax",
+          "value": "##"
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Final line is a concrete action or takeaway, not a question or open-ended reflection"
+        }
+      ]
+    },
+    {
+      "id": "tc-002",
+      "prompt": "Second test prompt — cover a different input type or edge case",
+      "context": "Testing edge case: very short/simple input",
+      "expected_output_type": "markdown",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "regex",
+          "check": "Starts with a strong opening sentence (not 'I' as the first word)",
+          "pattern": "^[^I]"
+        },
+        {
+          "id": "a2",
+          "type": "not_contains",
+          "check": "Does not contain 'In conclusion'",
+          "value": "In conclusion"
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not contain 'In summary'",
+          "value": "In summary"
+        },
+        {
+          "id": "a4",
+          "type": "custom",
+          "check": "Output contains at least one specific number, statistic, or concrete example"
+        },
+        {
+          "id": "a5",
+          "type": "line_check",
+          "check": "First line is a standalone complete sentence (not a heading)",
+          "line": "first"
+        }
+      ]
+    },
+    {
+      "id": "tc-003",
+      "prompt": "Third test prompt — test the most common use case",
+      "context": "Core workflow test",
+      "expected_output_type": "text",
+      "assertions": [
+        {
+          "id": "a1",
+          "type": "contains",
+          "check": "Contains a call-to-action",
+          "value": "you can"
+        },
+        {
+          "id": "a2",
+          "type": "word_count_max",
+          "check": "Under 200 words",
+          "value": 200
+        },
+        {
+          "id": "a3",
+          "type": "not_contains",
+          "check": "Does not use the word 'utilize'",
+          "value": "utilize"
+        },
+        {
+          "id": "a4",
+          "type": "not_contains",
+          "check": "Does not use the word 'leverage' as a verb",
+          "value": "leverage"
+        },
+        {
+          "id": "a5",
+          "type": "custom",
+          "check": "Output has a clear 3-part structure: setup/problem, middle/solution, ending/result"
+        }
+      ]
+    }
+  ],
+  "_assertion_types_reference": {
+    "contains": "Pass if output contains 'value' string (case-insensitive)",
+    "not_contains": "Pass if output does NOT contain 'value' string",
+    "regex": "Pass if output matches 'pattern' (JavaScript regex syntax)",
+    "word_count_max": "Pass if total word count <= 'value'",
+    "word_count_min": "Pass if total word count >= 'value'",
+    "line_check": "Evaluate first or last line; 'line' is 'first' or 'last', 'check' is evaluated as true/false",
+    "custom": "Claude evaluates 'check' description as binary true/false about the output"
+  },
+  "_good_assertions": [
+    "Does not contain em-dashes (—)",
+    "Total word count is under 300",
+    "First line is a standalone sentence (not part of a paragraph)",
+    "Contains at least one specific number or statistic",
+    "Final line is NOT a question",
+    "Contains a call-to-action",
+    "Uses heading level 2 (##) for sections",
+    "Does not start with 'I'",
+    "Does not contain 'In conclusion' or 'In summary'",
+    "Output has exactly 3 sections",
+    "Includes a bulleted list",
+    "Does not use passive voice more than once"
+  ],
+  "_bad_assertions_avoid": [
+    "Has a compelling subject line (SUBJECTIVE)",
+    "Tone is professional (SUBJECTIVE)",
+    "Writing quality is high (SUBJECTIVE)",
+    "Is engaging (SUBJECTIVE)",
+    "Sounds natural (SUBJECTIVE)"
+  ]
+}
