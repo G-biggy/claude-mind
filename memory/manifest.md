@@ -1,6 +1,6 @@
 # Memory Manifest
 *Auto-reference for Sage. Load this alongside identity.md. When a topic comes up, read the relevant file via MacKitt.*
-*Last updated: 2026-03-13*
+*Last updated: 2026-03-15*
 
 ## How to Use This
 When G mentions a topic, scan this manifest for matching keywords. If you find a match, read that file BEFORE responding. Don't guess from memory when the file has the real data.
@@ -49,6 +49,7 @@ When G mentions a topic, scan this manifest for matching keywords. If you find a
 | figma-plugin-dev.md | Figma plugin dev patterns and gotchas | Figma plugin API, plugin development bugs |
 | mcp-ecosystem-glossary.md | Glossary of MCP, skills, tools concepts | MCP, skills, tools, glossary, architecture terms |
 | tool-usage-patterns.md | MacKitt and tool usage patterns | MacKitt, tool usage, bash vs mackitt |
+| forge-usage-patterns.md | Forge session analytics, friction patterns, CLAUDE.md rules added Mar 2026 | Forge performance, session stats, friction, what's working, usage report, debugging patterns |
 | openclaw-inspiration.md | What to steal from OpenClaw, roadmap | OpenClaw, competition, roadmap, what to build next |
 
 ## Semantic Themes
@@ -94,3 +95,5 @@ When G mentions a topic, scan this manifest for matching keywords. If you find a
 - Episodes: `/Users/ghayyathhuzayen/VS-workspace/claude-mind/memory/episodes/`
 - Bridge tasks: `/Users/ghayyathhuzayen/VS-workspace/claude-bridge/tasks/`
 - Bridge results: `/Users/ghayyathhuzayen/VS-workspace/claude-bridge/results/`
+
+| sage-forge-handover.md | handover, context.md, hook, context-sync, Forge pickup, hand off, prepare for Forge, spec handover, UserPromptSubmit |
