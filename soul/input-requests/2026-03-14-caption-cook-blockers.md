@@ -1,8 +1,9 @@
 ---
-status: pending
+status: resolved
 created: 2026-03-14
 topic: Caption Cook Paddle integration - account needed
 urgency: medium
+resolution: Paddle account created, custom deal negotiated (10% flat ≤$10), MCP server installed, integration spec written, Part 1+2 committed. Integration in progress.
 ---
 
 # Caption Cook + Paddle — What I Need
