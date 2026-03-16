@@ -38,9 +38,10 @@ For each active product with pending Forge work:
 
 ## Ownership Rules
 
-- **Sage** writes product-level context after planning sessions
+- **Sage** writes product-level context after planning sessions (what to do next)
+- **Forge** writes completion updates after work sessions (what was done, what remains)
 - **Muse** was patched to SKIP working memory updates (was overwriting rich context with shallow summaries)
-- **Forge** reads but does not write to context.md
+- **Forge** updates context.md when done (what was completed, what is next) so Sage knows the current state
 
 ## The Full Handover Flow
 
